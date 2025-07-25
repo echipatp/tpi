@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Callback Autentificare</title>
+  <script>
+    window.onload = () => {
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get('token');
+      if (token) {
+        // Aquí puedes guardar token o hacer lógica
+        // Por ejemplo, redirigir a tu esquema personalizado para abrir la app:
+        window.location.href = `tpilustrator://authcallback?token=${token}`;
+      } else {
+        document.body.textContent = "Token lipsește!";
+      }
+    }
+  </script>
+</head>
+<body>
+  Se procesează autentificarea...
+</body>
+</html>
